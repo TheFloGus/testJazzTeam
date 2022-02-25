@@ -1,6 +1,11 @@
+import React, { Suspense } from "react";
 import "../styles/navigation.css";
 import { Routes, Route, Navigate, NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { SpinnerRoundFilled } from "spinners-react";
+import Footer from "./Footer"
+
+const Home = React.lazy(() => import("./Home"));
 
 
 export default function Navigation() {
@@ -44,11 +49,21 @@ export default function Navigation() {
           </div>
         </div>
       </header>
-
       <div className="page">
-        <div className="container">
+		<Suspense
+          fallback={
+            <div className="center-spinner">
+              <SpinnerRoundFilled
+                size={50}
+                thickness={100}
+                speed={100}
+                color="#bf85fe"
+              />
+            </div>
+          }
+        >
           <Routes>
-            <Route path="/" element={<div>hello</div>} />
+            <Route path="/" element={<Home />} />
             <Route path="/info" element={<div>how</div>} />
             {
               <Route
@@ -72,8 +87,10 @@ export default function Navigation() {
             }
 			<Route path="*" element={<Navigate to="/" />} />
           </Routes>
-        </div>
-      </div>
+		  </ Suspense>
+		  </div>
+
+		  <Footer />
     </>
   );
 }
