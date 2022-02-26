@@ -7,6 +7,7 @@ import Footer from "./Footer";
 
 const Home = React.lazy(() => import("./Home"));
 const Info = React.lazy(() => import("./Info"));
+const Login = React.lazy(() => import("./Login"));
 
 export default function Navigation() {
   const isLoggedIn = useSelector((state) => state.userData.isLoggedIn);
@@ -27,7 +28,7 @@ export default function Navigation() {
 
               {isLoggedIn ? (
                 <NavLink to="/calendar" className="nav__link">
-                  <div className="nav__button">Calendar</div>
+                  <div className="nav__button">Календарь</div>
                 </NavLink>
               ) : (
                 <div></div>
@@ -37,7 +38,7 @@ export default function Navigation() {
               {isLoggedIn ? (
                 <NavLink to="/profile" className="nav__link">
                   <div className="nav__button">
-                    {currentUser.userLogin}'s profile
+                    Здравствуйте, {currentUser.userLogin}!
                   </div>
                 </NavLink>
               ) : (
@@ -69,7 +70,7 @@ export default function Navigation() {
               <Route
                 path="/login"
                 element={
-                  isLoggedIn ? <Navigate to="/profile" /> : <div>login</div>
+                  isLoggedIn ? <Navigate to="/profile" /> : <Login />
                 }
               />
             }
@@ -82,7 +83,7 @@ export default function Navigation() {
             {
               <Route
                 path="/calendar"
-                element={isLoggedIn ? <div>you</div> : <Navigate to="/login" />}
+                element={isLoggedIn ? <div>calendar</div> : <Navigate to="/login" />}
               />
             }
             <Route path="*" element={<Navigate to="/" />} />

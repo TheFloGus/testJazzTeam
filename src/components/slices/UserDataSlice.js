@@ -30,10 +30,7 @@ const userDataSlice = createSlice({
       state.users.push(action.payload);
     },
     setCurrentUser: (state, action) => {
-      state.currentUser = {
-        ...state.users[action.payload],
-        index: action.payload,
-      };
+      state.currentUser = action.payload;
     },
     unsetCurrentUser: (state) => {
       state.currentUser = {};
