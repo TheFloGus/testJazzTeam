@@ -4,14 +4,22 @@ const initialState = {
   users: [
     {
       userLogin: "admin",
-      userName: "Eugene",
-      userSurname: "Brednev",
+      userName: "Евгений",
+      userSurname: "Бреднев",
       userPassword: "12345678",
       userEvents: [
         {
-          title: "event1",
+          title: "Поход к стоматологу",
           start: "2022-02-26",
         },
+		{
+			title: "Встреча с клиентами",
+			start: "2022-07-28",
+		  },
+		  {
+			title: "Купить удобрения",
+			start: "2022-03-27",
+		  },
       ],
     },
   ],
@@ -35,10 +43,13 @@ const userDataSlice = createSlice({
     unsetCurrentUser: (state) => {
       state.currentUser = {};
     },
+	sortEvents: (state) => {
+		state.currentUser.userEvents.sort((a,b) => new Date(a.start) - new Date(b.start))
+	}
   },
 });
 
 export default userDataSlice.reducer;
 
-export const { toggleLoggedIn, addUser, setCurrentUser, unsetCurrentUser } =
+export const { toggleLoggedIn, addUser, setCurrentUser, unsetCurrentUser, sortEvents } =
   userDataSlice.actions;

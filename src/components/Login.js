@@ -27,7 +27,7 @@ function Login() {
       if (currentUser) {
         dispatch(toggleLoggedIn());
         dispatch(setCurrentUser(currentUser));
-        <Navigate to="/" />;
+        <Navigate to="/profile" />;
       } else {
         alert("Invalid login or password");
       }

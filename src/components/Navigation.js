@@ -8,6 +8,7 @@ import Footer from "./Footer";
 const Home = React.lazy(() => import("./Home"));
 const Info = React.lazy(() => import("./Info"));
 const Login = React.lazy(() => import("./Login"));
+const Profile = React.lazy(() => import("./Profile"));
 
 export default function Navigation() {
   const isLoggedIn = useSelector((state) => state.userData.isLoggedIn);
@@ -38,7 +39,7 @@ export default function Navigation() {
               {isLoggedIn ? (
                 <NavLink to="/profile" className="nav__link">
                   <div className="nav__button">
-                    Здравствуйте, {currentUser.userLogin}!
+                    Здравствуйте, {currentUser.userName}!
                   </div>
                 </NavLink>
               ) : (
@@ -77,7 +78,7 @@ export default function Navigation() {
             {
               <Route
                 path="/profile"
-                element={isLoggedIn ? <div>you</div> : <Navigate to="/login" />}
+                element={isLoggedIn ? <Profile /> : <Navigate to="/login" />}
               />
             }
             {
