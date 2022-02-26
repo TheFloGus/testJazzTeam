@@ -3,10 +3,10 @@ import "../styles/navigation.css";
 import { Routes, Route, Navigate, NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { SpinnerRoundFilled } from "spinners-react";
-import Footer from "./Footer"
+import Footer from "./Footer";
 
 const Home = React.lazy(() => import("./Home"));
-
+const Info = React.lazy(() => import("./Info"));
 
 export default function Navigation() {
   const isLoggedIn = useSelector((state) => state.userData.isLoggedIn);
@@ -50,7 +50,7 @@ export default function Navigation() {
         </div>
       </header>
       <div className="page">
-		<Suspense
+        <Suspense
           fallback={
             <div className="center-spinner">
               <SpinnerRoundFilled
@@ -64,7 +64,7 @@ export default function Navigation() {
         >
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/info" element={<div>how</div>} />
+            <Route path="/info" element={<Info />} />
             {
               <Route
                 path="/login"
@@ -85,12 +85,12 @@ export default function Navigation() {
                 element={isLoggedIn ? <div>you</div> : <Navigate to="/login" />}
               />
             }
-			<Route path="*" element={<Navigate to="/" />} />
+            <Route path="*" element={<Navigate to="/" />} />
           </Routes>
-		  </ Suspense>
-		  </div>
+        </Suspense>
+      </div>
 
-		  <Footer />
+      <Footer />
     </>
   );
 }
