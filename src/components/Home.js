@@ -54,7 +54,7 @@ function Home() {
 			<h2 className='customers__title'>Наши клиенты</h2>
           <Carousel itemsToShow={3} itemsToScroll={3}>
             {customerLogos.map((logo, index) => (
-              <img src={logo} key={index}></img>
+              <img src={logo} key={index} alt="company-logo"></img>
             ))}
           </Carousel>
         </div>

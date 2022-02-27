@@ -7,7 +7,24 @@
 	width: 50%;
 }
 
+.profile__header{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
 
+.profile__exit{
+	padding: 10px;
+	border-radius: 5px;
+	background-color: rgba(255, 108, 108, 0.333);
+	border: none;
+	cursor: pointer;
+}
+
+.profile__exit:active{
+	position: relative;
+	top: 2px;
+}
 
 .profile__data-set{
 	display: flex;

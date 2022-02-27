@@ -3,11 +3,16 @@ import { useSelector, useDispatch } from "react-redux";
 import React, { useEffect } from "react";
 import { format } from "date-fns";
 import ru from "date-fns/locale/ru";
-import { sortEvents } from "./slices/UserDataSlice";
+import { toggleLoggedIn ,sortEvents, unsetCurrentUser } from "./slices/UserDataSlice";
 
 function Profile() {
   const currentUser = useSelector((state) => state.userData.currentUser);
   const dispatch = useDispatch();
+
+  function logOutHandler(){
+	dispatch(toggleLoggedIn())
+	dispatch(unsetCurrentUser())
+  }
 
   useEffect(() => {
     dispatch(sortEvents());
@@ -16,7 +21,10 @@ function Profile() {
   return (
     <div className="profile">
       <div className="container">
-        <h2 className="profile__title">Ваш профиль</h2>
+        <div className="profile__header">
+          <h2 className="profile__title">Ваш профиль</h2>
+		  <button className="profile__exit" onClick={logOutHandler}>Выйти из профиля</button>
+        </div>
         <span className="line"></span>
         <div className="profile__data-box">
           <div className="profile__data-set titles">
@@ -30,7 +38,7 @@ function Profile() {
             <p className="profile__data">{currentUser.userLogin}</p>
           </div>
         </div>
-		<span className="line"></span>
+        <span className="line"></span>
         <div className="profile__events">
           <h2 className="profile__events--title">Ваши события</h2>
           <div className="events__list">

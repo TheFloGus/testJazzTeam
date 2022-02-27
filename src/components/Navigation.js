@@ -9,6 +9,7 @@ const Home = React.lazy(() => import("./Home"));
 const Info = React.lazy(() => import("./Info"));
 const Login = React.lazy(() => import("./Login"));
 const Profile = React.lazy(() => import("./Profile"));
+const Calendar = React.lazy(() => import("./Calendar"));
 
 export default function Navigation() {
   const isLoggedIn = useSelector((state) => state.userData.isLoggedIn);
@@ -84,7 +85,7 @@ export default function Navigation() {
             {
               <Route
                 path="/calendar"
-                element={isLoggedIn ? <div>calendar</div> : <Navigate to="/login" />}
+                element={isLoggedIn ? <Calendar /> : <Navigate to="/login" />}
               />
             }
             <Route path="*" element={<Navigate to="/" />} />
