@@ -22,6 +22,26 @@ const initialState = {
         },
       ],
     },
+	{
+		userLogin: "hero",
+		userName: "Евгений",
+		userSurname: "Бреднев",
+		userPassword: "87654321",
+		userEvents: [
+		  {
+			title: "Поход к стоматологу",
+			start: "2022-02-26",
+		  },
+		  {
+			title: "Встреча с клиентами",
+			start: "2022-02-28",
+		  },
+		  {
+			title: "Купить удобрения",
+			start: "2022-02-27",
+		  },
+		],
+	  },
   ],
   isLoggedIn: false,
   currentUser: {},
