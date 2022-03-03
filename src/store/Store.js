@@ -1,5 +1,5 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
-import userDataSlice from "../components/slices/UserDataSlice";
+import userDataSlice from "../assets/slices/UserDataSlice";
 import {
   persistStore,
   persistReducer,

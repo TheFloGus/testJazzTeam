@@ -1,9 +1,9 @@
-import "../styles/profile.css";
+import "../../../assets/styles/profile.css";
 import { useSelector, useDispatch } from "react-redux";
 import React, { useEffect } from "react";
 import { format } from "date-fns";
 import ru from "date-fns/locale/ru";
-import { toggleLoggedIn ,sortEvents, unsetCurrentUser } from "./slices/UserDataSlice";
+import { toggleLoggedIn ,sortEvents, unsetCurrentUser } from "../../../assets/slices/UserDataSlice";
 
 function Profile() {
   const currentUser = useSelector((state) => state.userData.currentUser);

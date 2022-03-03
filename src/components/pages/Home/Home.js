@@ -1,6 +1,6 @@
-import "../styles/home.css";
+import "../../../assets/styles/home.css";
 import Carousel from "react-elastic-carousel";
-import { customerLogos } from "./images/imports";
+import { customerLogos } from "../../../assets/images/imports";
 
 function Home() {
   return (

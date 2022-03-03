@@ -86,7 +86,7 @@
 	width: 30px;
 	height: 30px;
 	padding: 5px;
-	background: url(../components/images/icons/trashbin.png) no-repeat center;
+	background: url(../images/icons/trashbin.png) no-repeat center;
 	background-size: 20px 20px;
 	cursor: pointer;
 	border-radius: 5px;

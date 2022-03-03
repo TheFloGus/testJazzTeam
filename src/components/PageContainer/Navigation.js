@@ -1,15 +1,15 @@
 import React, { Suspense } from "react";
-import "../styles/navigation.css";
+import "../../assets/styles/navigation.css";
 import { Routes, Route, Navigate, NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { SpinnerRoundFilled } from "spinners-react";
 import Footer from "./Footer";
 
-const Home = React.lazy(() => import("./Home"));
-const Info = React.lazy(() => import("./Info"));
-const Login = React.lazy(() => import("./Login"));
-const Profile = React.lazy(() => import("./Profile"));
-const Calendar = React.lazy(() => import("./Calendar"));
+const Home = React.lazy(() => import("../pages/Home/Home"));
+const Info = React.lazy(() => import("../pages/Info/Info"));
+const Login = React.lazy(() => import("../pages/Login/Login"));
+const Profile = React.lazy(() => import("../pages/Profile/Profile"));
+const Calendar = React.lazy(() => import("../pages/Calendar/Calendar"));
 
 export default function Navigation() {
   const isLoggedIn = useSelector((state) => state.userData.isLoggedIn);

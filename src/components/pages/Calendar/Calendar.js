@@ -4,7 +4,7 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import ruLocale from "@fullcalendar/core/locales/ru";
 import { useSelector } from "react-redux";
-import "../styles/calendar.css";
+import "../../../assets/styles/calendar.css";
 import Search from "./Search";
 import EventEditor from "./EventEditor";
 

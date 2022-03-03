@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { removeEvent, editEvent } from "./slices/UserDataSlice";
+import { removeEvent, editEvent } from "../../../assets/slices/UserDataSlice";
 import { useDispatch } from "react-redux";
 
 function EventDrawer({ event }) {
