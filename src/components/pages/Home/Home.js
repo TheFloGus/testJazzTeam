@@ -1,6 +1,6 @@
-import "../styles/home.css";
+import "../../../assets/styles/home.css";
 import Carousel from "react-elastic-carousel";
-import { customerLogos } from "./images/imports";
+import { customerLogos } from "../../../assets/images/imports";
 
 function Home() {
   return (
@@ -51,7 +51,7 @@ function Home() {
         <span className="line"></span>
 
         <div className="customers">
-			<h2 className='customers__title'>Наши клиенты</h2>
+          <h2 className="customers__title">Наши клиенты</h2>
           <Carousel itemsToShow={3} itemsToScroll={3}>
             {customerLogos.map((logo, index) => (
               <img src={logo} key={index} alt="company-logo"></img>

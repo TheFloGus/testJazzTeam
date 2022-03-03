@@ -4,7 +4,7 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin from "@fullcalendar/interaction";
 import ruLocale from "@fullcalendar/core/locales/ru";
 import { useSelector } from "react-redux";
-import "../styles/calendar.css";
+import "../../../assets/styles/calendar.css";
 import Search from "./Search";
 import EventEditor from "./EventEditor";
 
@@ -13,7 +13,6 @@ function Calendar() {
   const [clickedDate, setClickedDate] = useState("");
   const currentUser = useSelector((state) => state.userData.currentUser);
   const calendarRef = useRef();
-  
 
   function goToDate(date) {
     let calendarApi = calendarRef.current.getApi();
@@ -31,11 +30,13 @@ function Calendar() {
           events={currentUser.userEvents}
           locale={ruLocale}
           dateClick={(arg) => {
-			setClickedDate(arg.dateStr);
+            setClickedDate(arg.dateStr);
             setModalOpen(true);
           }}
         />
-		{modalOpen && <EventEditor date={clickedDate} setModalOpen={setModalOpen}/>}
+        {modalOpen && (
+          <EventEditor date={clickedDate} setModalOpen={setModalOpen} />
+        )}
       </div>
     </div>
   );

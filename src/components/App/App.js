@@ -1,8 +1,8 @@
 import "./App.css";
-import Navigation from "./components/Navigation";
+import Navigation from "../PageContainer/Navigation";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
-import store, { persistor } from "./store/Store";
+import store, { persistor } from "../../store/Store";
 import { PersistGate } from "redux-persist/integration/react";
 import { SpinnerRoundFilled } from "spinners-react";
 
@@ -18,7 +18,7 @@ function App() {
             color="#bf85fe"
           />
         }
-		persistor={persistor}
+        persistor={persistor}
       >
         <BrowserRouter>
           <Navigation />
