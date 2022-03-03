@@ -7,4 +7,4 @@ import SS8 from "./logos/SS8-1.jpg";
 
 let customerLogos = [alconost, ezwim, infoview, ip_telecom, nexign, SS8];
 
-export {customerLogos};
+export { customerLogos };

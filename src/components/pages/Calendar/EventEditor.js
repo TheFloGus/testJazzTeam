@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { format } from "date-fns";
 import ru from "date-fns/locale/ru";
 import EventDrawer from "./EventDrawer";
-import '../../../assets/styles/events.css'
+import "../../../assets/styles/events.css";
 
 function EventEditor({ date, setModalOpen }) {
   const [name, setName] = useState("");
@@ -20,7 +20,7 @@ function EventEditor({ date, setModalOpen }) {
         };
         dispatch(addEvent(newEvent));
         dispatch(sortEvents());
-		setName('')
+        setName("");
       } else {
         alert("Введите название события");
       }
@@ -35,7 +35,7 @@ function EventEditor({ date, setModalOpen }) {
       };
       dispatch(addEvent(newEvent));
       dispatch(sortEvents());
-	  setName('')
+      setName("");
     } else {
       alert("Введите название события");
     }

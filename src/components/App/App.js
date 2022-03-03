@@ -18,7 +18,7 @@ function App() {
             color="#bf85fe"
           />
         }
-		persistor={persistor}
+        persistor={persistor}
       >
         <BrowserRouter>
           <Navigation />

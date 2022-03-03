@@ -71,9 +71,7 @@ export default function Navigation() {
             {
               <Route
                 path="/login"
-                element={
-                  isLoggedIn ? <Navigate to="/profile" /> : <Login />
-                }
+                element={isLoggedIn ? <Navigate to="/profile" /> : <Login />}
               />
             }
             {

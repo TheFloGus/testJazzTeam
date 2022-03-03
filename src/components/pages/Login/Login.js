@@ -2,7 +2,10 @@ import "../../../assets/styles/login.css";
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Navigate } from "react-router-dom";
-import { toggleLoggedIn, setCurrentUser } from "../../../assets/slices/UserDataSlice";
+import {
+  toggleLoggedIn,
+  setCurrentUser,
+} from "../../../assets/slices/UserDataSlice";
 
 function Login() {
   const [login, setLogin] = useState("");

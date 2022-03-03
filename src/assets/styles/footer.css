@@ -1,14 +1,14 @@
-.footer{
-	background-color: #3b3b3b;
-	color: #fff;
-	margin-top: 50px;
-	min-height: 10vh;
+.footer {
+  background-color: #3b3b3b;
+  color: #fff;
+  margin-top: 50px;
+  min-height: 10vh;
 }
 
-.footer__text{
-	display: flex;
-	height: 10vh;
-	width: 100%;
-	justify-content: center;
-	align-items: center;
+.footer__text {
+  display: flex;
+  height: 10vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
