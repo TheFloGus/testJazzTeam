@@ -1,4 +1,4 @@
-import "../styles/info.css";
+import "../../../assets/styles/info.css";
 
 function Info() {
   return (

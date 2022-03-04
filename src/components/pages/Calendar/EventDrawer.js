@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { removeEvent, editEvent } from "./slices/UserDataSlice";
+import { removeEvent, editEvent } from "../../../assets/slices/UserDataSlice";
 import { useDispatch } from "react-redux";
 
 function EventDrawer({ event }) {
@@ -22,7 +22,7 @@ function EventDrawer({ event }) {
       {editEnabled ? (
         <div className="event-editor__event">
           <input
-		  className="event-editor__input"
+            className="event-editor__input"
             value={value}
             onChange={(e) => setValue(e.target.value)}
           ></input>
@@ -54,9 +54,7 @@ function EventDrawer({ event }) {
             <button
               className="event-editor__button delete"
               onClick={() => dispatch(removeEvent(event))}
-            >
-              
-            </button>
+            ></button>
           </div>
         </div>
       )}

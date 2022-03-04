@@ -22,26 +22,26 @@ const initialState = {
         },
       ],
     },
-	{
-		userLogin: "hero",
-		userName: "Евгений",
-		userSurname: "Бреднев",
-		userPassword: "87654321",
-		userEvents: [
-		  {
-			title: "Поход к стоматологу",
-			start: "2022-02-26",
-		  },
-		  {
-			title: "Встреча с клиентами",
-			start: "2022-02-28",
-		  },
-		  {
-			title: "Купить удобрения",
-			start: "2022-02-27",
-		  },
-		],
-	  },
+    {
+      userLogin: "hero",
+      userName: "Евгений",
+      userSurname: "Бреднев",
+      userPassword: "87654321",
+      userEvents: [
+        {
+          title: "Поход к стоматологу",
+          start: "2022-02-26",
+        },
+        {
+          title: "Встреча с клиентами",
+          start: "2022-02-28",
+        },
+        {
+          title: "Купить удобрения",
+          start: "2022-02-27",
+        },
+      ],
+    },
   ],
   isLoggedIn: false,
   currentUser: {},
@@ -99,26 +99,24 @@ const userDataSlice = createSlice({
       );
       state.users[index].userEvents.splice(globalIndex, 1);
     },
-	editEvent: (state, action) => {
-		let newName = action.payload.value
-		let editEvent = action.payload.event
-		let currentIndex = state.currentUser.userEvents.findIndex(
-			(event) =>
-			  event.title === editEvent.title &&
-			  event.start === editEvent.start
-		  );
-		  state.currentUser.userEvents[currentIndex].title=newName;
-	
-		  let index = state.users.findIndex(
-			(user) => state.currentUser.userLogin === user.userLogin
-		  );
-		  let globalIndex = state.users[index].userEvents.findIndex(
-			(event) =>
-			  event.title === editEvent.title &&
-			  event.start === editEvent.start
-		  );
-		  state.users[index].userEvents[globalIndex].title=newName;
-	}
+    editEvent: (state, action) => {
+      let newName = action.payload.value;
+      let editEvent = action.payload.event;
+      let currentIndex = state.currentUser.userEvents.findIndex(
+        (event) =>
+          event.title === editEvent.title && event.start === editEvent.start
+      );
+      state.currentUser.userEvents[currentIndex].title = newName;
+
+      let index = state.users.findIndex(
+        (user) => state.currentUser.userLogin === user.userLogin
+      );
+      let globalIndex = state.users[index].userEvents.findIndex(
+        (event) =>
+          event.title === editEvent.title && event.start === editEvent.start
+      );
+      state.users[index].userEvents[globalIndex].title = newName;
+    },
   },
 });
 

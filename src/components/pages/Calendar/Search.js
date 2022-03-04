@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
+import "../../../assets/styles/search.css";
 
 function Search({ goToDate }) {
   const [query, setQuery] = useState("");
   const [resultsShow, setResultsShow] = useState(false);
   const currentUser = useSelector((state) => state.userData.currentUser);
 
-  useEffect(() =>{
-	  if(!query) {
-		setResultsShow(false)
-	  }
-  }, [query])
+  useEffect(() => {
+    if (!query) {
+      setResultsShow(false);
+    }
+  }, [query]);
 
   return (
     <>
