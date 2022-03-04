@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
+import "../../../assets/styles/search.css";
 
 function Search({ goToDate }) {
   const [query, setQuery] = useState("");
