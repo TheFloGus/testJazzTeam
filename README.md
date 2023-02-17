@@ -24,7 +24,7 @@
 
 ## Live demo
 
-You can find live demo here: https://testjazzteam.herokuapp.com/
+You can find live demo here: https://dev--silver-crostata-1c1a7f.netlify.app/
 
 (notice: первая загрузка может занять пару минут)
 
@@ -47,9 +47,6 @@ You can find live demo here: https://testjazzteam.herokuapp.com/
 
 ## Деплоймент 
 
-Приложение размещено на [Heroku](https://heroku.com/)
+Приложение размещено на Netlify
 
 Проект использует автоматическое размещение ветки main.
-
-Размещенное приложение вы можете найти [тут](https://skillguru.herokuapp.com)
-
